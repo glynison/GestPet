@@ -1,5 +1,11 @@
 # GestPet
-## Projeto Integrador V - Faculdade Senac 5º Período
+## Projeto Integrador V - Faculdade Senac Goiás 5º Período
+
+### Desenvolvido por
+ > Glynison Souza
+ > Mateus Mais
+ > Helder Henrique
+ > Thiago Murray 
 
 O software proposto consiste em um sistema Web para administrar, controlar e comercializar produtos na internet. Este software deverá implementar um processo de serviços de empresas de vendas, ou seja, será um sistema completo de gestão de uma loja, que espera contar com controle de cliente, funcionário, controle de estoque e vendas, pedidos, contas a pagar e outros.
 
