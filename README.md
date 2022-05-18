@@ -48,5 +48,5 @@ Entregar a especificação da arquitetura do software, contendo:
 
 
 
-## Diagrama do Projeto
+## Modelo Conceitual
 ![Diagrama completo](https://user-images.githubusercontent.com/89254897/169170143-e96751e0-79dd-4b11-81a7-1c39c9c5dbf2.png)
