@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import './styles/variaveis.scss';
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+
+
+
+body {
+    min-width: 372px;
+}
+
+label:hover .text-dark {
+    transition: color 0.2s ease;
+    color: white !important;
+}
+
+label .text-dark {
+    transition: color 0.2s ease;
+}
+.btn-check:checked+.btn-outline-danger .text-dark,
+.btn-check:active+.btn-outline-danger .text-dark,
+.btn-check:hover+.btn-outline-danger .text-dark {
+    transition: color 0.2s ease;
+    color: white !important;
+
+}
+.flex-even{
+    flex: 1;
+    min-width:300px;
+}
+
+.accordion-button:not(.collapsed){
+    color: white;
+    background-color: #dc3545
+}

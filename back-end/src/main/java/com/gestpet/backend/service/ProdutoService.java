@@ -15,7 +15,7 @@ public class ProdutoService{
     @Autowired
     private ProdutoDAO produtoDAO;
 
-  public void criarCliente(Produto produto) {
+  public void criarProduto(Produto produto) {
         produtoDAO.save(produto);
     }
 

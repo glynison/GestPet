@@ -20,15 +20,15 @@ public class CategoriaService {
         categoriaDAO.save(categoria);
     }
 
-    public List<Categoria> listarTodos() {
+    public List<Categoria> listarCategorias() {
         return categoriaDAO.findAll();
     }
 
-    public Optional<Categoria> listarPorId(Integer id) {
+    public Optional<Categoria> listarPorID(Integer id) {
         return categoriaDAO.findById(id);
     }
 
-    public void deletarCategoria(Integer id) {
+    public void deletarCategoriaID(Integer id) {
         categoriaDAO.deleteById(id);
     }   
 }
