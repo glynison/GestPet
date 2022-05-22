@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import org.springframework.data.annotation.Id;
@@ -25,7 +27,10 @@ public class Categoria {
     private String nome;
     
     @Column(name = "cate_produtos")
-    @ManyToMany(mappedBy = "produtos")
+    @ManyToMany
+    @JoinTable(name = "categorias_produtos",
+        joinColumns = @JoinColumn(name = "cate_id"),
+        inverseJoinColumns = @JoinColumn(name = "prod_id")
+    )
     private List<Produto> produtos;
-
 }

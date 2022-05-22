@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import lombok.Data;
@@ -30,14 +28,11 @@ public class Produto {
     private Double preco;
     
     @Column(name = "prod_categoria", nullable = false)
-    @ManyToMany
-    @JoinTable(
-        name = "produto_categoria",
-        joinColumns = @JoinColumn(name = "prod_id"),
-        inverseJoinColumns = @JoinColumn(name = "cate_id")
-    )
+    @ManyToMany(mappedBy = "produtos")
     private List<Categoria> categorias;
     
-    @Column(name = "prod_pedido", nullable = false)
-    private List<Pedido> pedidos;
+
+    @Column(name = "prod_itens", nullable = false)
+    @ManyToMany(mappedBy = "itens")
+    private List<Pedido> itens;
 }

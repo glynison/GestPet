@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -33,11 +33,13 @@ public class Cliente {
     private String tipo; // no diagrama está: -tipo : TipoCliente (??)
     
     @Column(name = "clie_endereco")
+    @OneToMany(mappedBy = "cliente")
     private List<Endereco> enderecos;
     
     @Column(name = "clie_telefone")
     private List<Telefone> telefones;
     
     @Column(name = "clie_pedido")
+    @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos;
 }
