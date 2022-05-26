@@ -34,3 +34,7 @@ label .text-dark {
     color: white;
     background-color: #dc3545
 }
+.bg-dark{
+
+    color: aquamarine !important;
+}
