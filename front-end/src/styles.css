@@ -32,9 +32,19 @@ label .text-dark {
 
 .accordion-button:not(.collapsed){
     color: white;
-    background-color: #dc3545
+    background-color: hsla(0, 66%, 42%, 0.773)
 }
-.bg-danger{
+.btn-danger {
+    color: #fff !important;
+    background-color: #b22424b0 !important;
+    border-color: #f8f9fa !important;
+}
 
-    color: rgb(255, 127, 127) !important;
+.bg-danger {
+    color: #fff !important;
+    background-color: hsla(0, 66%, 42%, 0.773) !important;
+    border-color: #f8f9fa !important;
+}
+.btn-check{
+    background-color: hsla(0, 66%, 42%, 0.773) !important;
 }
