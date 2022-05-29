@@ -34,7 +34,7 @@ label .text-dark {
     color: white;
     background-color: #dc3545
 }
-.bg-dark{
+.bg-danger{
 
-    color: aquamarine !important;
+    color: rgb(255, 127, 127) !important;
 }

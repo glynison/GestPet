@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CepServiceService } from '../shared/services/cep-service.service';
 
 @Component({
   selector: 'app-cadastrar',
@@ -6,10 +7,72 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastrar.component.css']
 })
 export class CadastrarComponent implements OnInit {
+  title ='angular-cadastrar';
 
-  constructor() { }
+  constructor(private cepService: CepServiceService) { }
+
+  
+
+  
 
   ngOnInit(): void {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

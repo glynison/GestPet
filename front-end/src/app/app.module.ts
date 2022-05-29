@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +21,13 @@ import { ClienteSenhaComponent } from './cliente-senha/cliente-senha.component';
 import { ClienteFavoritoComponent } from './cliente-favoritos/cliente-favorito.component';
 import { ClientePedidosComponent } from './cliente-pedidos/cliente-pedidos.component';
 import { ProdutoComponent } from './produto/produto.component';
+import { ContatoComponent } from './contato/contato.component';
+import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
+import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-categoria.component';
+import { UsuarioAdministradorComponent } from './usuario-administrador/usuario-administrador.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -39,11 +48,16 @@ import { ProdutoComponent } from './produto/produto.component';
     ClienteFavoritoComponent,
     ClientePedidosComponent,
     ProdutoComponent,
-    
+    ContatoComponent,
+    CadastrarProdutoComponent,
+    CadastrarCategoriaComponent,
+    UsuarioAdministradorComponent 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
