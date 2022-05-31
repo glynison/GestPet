@@ -23,7 +23,7 @@ public class Cidade {
     private String nome;
     
     @Column(name = "cida_estado")
-    @ManyToOne
+    //@ManyToOne
     @JoinColumn(name = "esta_id", nullable = false)
     private Estado estado;
 }

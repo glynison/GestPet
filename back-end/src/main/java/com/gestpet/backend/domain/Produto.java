@@ -28,11 +28,11 @@ public class Produto {
     private Double preco;
     
     @Column(name = "prod_categoria", nullable = false)
-    @ManyToMany(mappedBy = "produtos")
+    //@ManyToMany(mappedBy = "produtos")
     private List<Categoria> categorias;
     
 
     @Column(name = "prod_itens", nullable = false)
-    @ManyToMany(mappedBy = "itens")
+    //@ManyToMany(mappedBy = "itens")
     private List<Pedido> itens;
 }

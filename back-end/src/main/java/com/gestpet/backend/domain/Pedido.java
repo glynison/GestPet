@@ -28,7 +28,7 @@ public class Pedido {
     private LocalDate instante;
     
     @Column(name = "pedi_itens")
-    @ManyToMany
+    //@ManyToMany
     @JoinTable(name = "pedidos_produtos",
         joinColumns =  @JoinColumn(name = "pedi_id"),
         inverseJoinColumns = @JoinColumn(name = "prod_id")
@@ -36,7 +36,7 @@ public class Pedido {
     private List<Produto> itens;
     
     @Column(name = "pedi_cliente")
-    @ManyToOne
+    //@ManyToOne
     @JoinColumn(name = "id", nullable = false)
     private Cliente cliente;
     

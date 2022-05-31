@@ -38,7 +38,7 @@ public class Endereco {
     private Cidade cidade;
     
     @Column(name = "ende_cliente")
-    @ManyToOne
+    //@ManyToOne
     @JoinColumn(name = "clie_id")
     private Cliente cliente;
 }

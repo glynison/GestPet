@@ -33,7 +33,7 @@ public class Cliente {
     private String tipo; // no diagrama está: -tipo : TipoCliente (??)
     
     @Column(name = "clie_endereco")
-    @OneToMany(mappedBy = "cliente")
+    //@OneToMany(mappedBy = "cliente")
     private List<Endereco> enderecos;
     
     @Column(name = "clie_telefone")
