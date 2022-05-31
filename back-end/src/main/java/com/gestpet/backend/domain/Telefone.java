@@ -6,10 +6,10 @@ import javax.persistence.Entity;
 import lombok.Data;
 
 @Data
-@Entity
+//@Entity
 public class Telefone {
 
-    @Column(name = "tele_numero")
+    //@Column(name = "tele_numero")
     private String numero;
 
 }
