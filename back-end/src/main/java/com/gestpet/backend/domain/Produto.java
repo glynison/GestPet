@@ -1,38 +1,80 @@
 package com.gestpet.backend.domain;
 
 
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-@Data
 @Entity
 public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "prod_id", nullable = false)
+    @Column(name = "prod_id")
     private Integer id;
-
-    @Column(name = "prod_nome", nullable = false)
+    
+    @NotNull 
+    @Column(name = "prod_nome")
     private String nome;
     
-    @Column(name = "prod_preco", nullable = false)
+    @NotNull 
+    @Column(name = "prod_preco")
     private Double preco;
     
-    @Column(name = "prod_categoria", nullable = false)
-    //@ManyToMany(mappedBy = "produtos")
-    private List<Categoria> categorias;
+    @ManyToOne
+    @JoinColumn(name = "cate_id")
+    @JsonIgnore
+    private Categoria categorias;
     
+    @OneToOne
+    private ItemPedido itemPedido;
 
-    @Column(name = "prod_itens", nullable = false)
-    //@ManyToMany(mappedBy = "itens")
-    private List<Pedido> itens;
+   
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(Double preco) {
+		this.preco = preco;
+	}
+
+	public Categoria getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(Categoria categorias) {
+		this.categorias = categorias;
+	}
+
+    
+    
+    
+    
 }

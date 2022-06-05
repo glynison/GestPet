@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.Data;
 
@@ -27,22 +29,67 @@ public class Pedido {
     @Column(name = "pedi_instante")
     private LocalDate instante;
     
-    @Column(name = "pedi_itens")
-    //@ManyToMany
-    @JoinTable(name = "pedidos_produtos",
-        joinColumns =  @JoinColumn(name = "pedi_id"),
-        inverseJoinColumns = @JoinColumn(name = "prod_id")
-    )
-    private List<Produto> itens;
+    @Column(name = "pedi_total")
+    private String total;
     
-    @Column(name = "pedi_cliente")
-    //@ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @Column(name = "pedi_obs")
+    private String observacao;
+    
+    @OneToOne
+    @JoinColumn(name = "cli_id")
     private Cliente cliente;
     
-    @Column(name = "pedi_pagamento")
-    private Pagamento pagamento;
+    @OneToMany (mappedBy ="pedido")
+    private List<ItemPedido> itemPedido;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public LocalDate getInstante() {
+		return instante;
+	}
+
+	public void setInstante(LocalDate instante) {
+		this.instante = instante;
+	}
+
+	public String getTotal() {
+		return total;
+	}
+
+	public void setTotal(String total) {
+		this.total = total;
+	}
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public List<ItemPedido> getItemPedido() {
+		return itemPedido;
+	}
+
+	public void setItemPedido(List<ItemPedido> itemPedido) {
+		this.itemPedido = itemPedido;
+	}
     
-    @Column(name = "pedi_endEntrega")
-    private Endereco enderecoEntrega;
+    
+    
 }
