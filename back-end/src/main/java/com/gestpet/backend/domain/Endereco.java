@@ -43,10 +43,7 @@ public class Endereco {
     @Column(name = "ende_cep")
     private String cep;
 
-    @OneToOne
-    @JsonIgnore
-    @JoinColumn(name = "cli_id")
-    private Cliente cliente;
+  
 
 	public Integer getId() {
 		return id;
@@ -112,13 +109,7 @@ public class Endereco {
 		this.cep = cep;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
-	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
     
     
 }

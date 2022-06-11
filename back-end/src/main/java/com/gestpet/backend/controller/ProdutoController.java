@@ -29,9 +29,6 @@ public class ProdutoController {
     
     @Autowired
     private ProdutoDAO Dao;
-    
-//    @Autowired
-//    private CategoriaDAO Cate;
 
 
     @GetMapping
@@ -47,6 +44,7 @@ public class ProdutoController {
     
     @PostMapping
     public Produto Salvar(@RequestBody ProdutoPostDTO produtoDTO) { 
+    	
     	Produto p = new Produto();
     	p.setNome(produtoDTO.getNome());
     	p.setPreco(produtoDTO.getPreco());

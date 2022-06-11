@@ -2,7 +2,6 @@ package com.gestpet.backend.domain;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,16 +33,17 @@ public class Cliente {
     @Column(name = "clie_email")
     private String email;
     
-    
-    @OneToMany (mappedBy ="cliente")
-    private List<Endereco> enderecos;
-    
+    @OneToOne
+    private Endereco endereco;
   
     @OneToMany (mappedBy ="cliente")
     private List<Pedido> pedidos;
     
     @OneToOne
     private WebUser webUser;
+   
+    
+	
 
 	public Integer getId() {
 		return id;
@@ -85,14 +85,14 @@ public class Cliente {
 		this.email = email;
 	}
 
+	
 
-
-	public List<Endereco> getEnderecos() {
-		return enderecos;
+	public Endereco getEndereco() {
+		return endereco;
 	}
 
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
 	public List<Pedido> getPedidos() {
