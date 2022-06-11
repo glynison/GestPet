@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class ItemPedido {
 	
@@ -21,11 +23,10 @@ public class ItemPedido {
     
 	@Column(name = "item_valor")
     private Double valorUnitario;
-    
-	@OneToOne
-    private Produto produto;
+   
     
     @OneToOne
+    @JsonIgnore
     @JoinColumn(name = "pedido_id")
     private Pedido pedido;
 
@@ -53,13 +54,6 @@ public class ItemPedido {
 		this.valorUnitario = valorUnitario;
 	}
 
-	public Produto getProduto() {
-		return produto;
-	}
-
-	public void setProduto(Produto produto) {
-		this.produto = produto;
-	}
 
 	public Pedido getPedido() {
 		return pedido;

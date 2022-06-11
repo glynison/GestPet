@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Data
@@ -35,6 +37,7 @@ public class Pedido {
     @Column(name = "pedi_obs")
     private String observacao;
     
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "cli_id")
     private Cliente cliente;

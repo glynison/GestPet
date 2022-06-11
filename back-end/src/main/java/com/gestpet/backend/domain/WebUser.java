@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class WebUser {
 	
@@ -16,6 +18,7 @@ public class WebUser {
 	
 	//Private List<EstadoUsuario> estado;
 	
+	@JsonIgnore
 	@OneToOne
 	private Cliente cliente;
 

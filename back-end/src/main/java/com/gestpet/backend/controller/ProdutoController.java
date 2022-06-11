@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gestpet.backend.DTO.ProdutoPostDTO;
 import com.gestpet.backend.domain.Categoria;
 import com.gestpet.backend.domain.Produto;
 import com.gestpet.backend.domain.Produto;
@@ -43,19 +44,21 @@ public class ProdutoController {
     return  Dao.findById(id);
     }
     
-//    @RequestMapping(value = "/{id}", method=RequestMethod.POST)	
-//    public String SalvarPorCategoria(@PathVariable("id") int id, Produto produto) { 
-//    Categoria categoria = Cate.findById(id);
-//    produto.setCategorias(categoria);
-//    Dao.save(produto);
-//    
-//    return "redirect:/{id}";
-//    
-//    }
     
     @PostMapping
-    public Produto Salvar(@RequestBody Produto produto) { 
-    return Dao.save(produto);
+    public Produto Salvar(@RequestBody ProdutoPostDTO produtoDTO) { 
+    	Produto p = new Produto();
+    	p.setNome(produtoDTO.getNome());
+    	p.setPreco(produtoDTO.getPreco());
+    	p.setDescricao(produtoDTO.getDescricao());
+    	
+    	Categoria c = new Categoria();
+    	c.setId(produtoDTO.getIdCategorias());
+    	
+    	p.setCategorias(c);
+    	
+ 
+    return Dao.save(p);
     }
 
     @DeleteMapping("/{id}")

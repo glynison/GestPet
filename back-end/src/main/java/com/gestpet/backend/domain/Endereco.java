@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Data
@@ -42,6 +44,7 @@ public class Endereco {
     private String cep;
 
     @OneToOne
+    @JsonIgnore
     @JoinColumn(name = "cli_id")
     private Cliente cliente;
 

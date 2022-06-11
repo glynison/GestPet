@@ -13,7 +13,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Produto {
@@ -31,15 +33,14 @@ public class Produto {
     @Column(name = "prod_preco")
     private Double preco;
     
+    @JoinColumn(name = "descricao")
+    private String descricao;
+    
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "cate_id")
-    @JsonIgnore
     private Categoria categorias;
-    
-    @OneToOne
-    private ItemPedido itemPedido;
 
-   
 
 	public Integer getId() {
 		return id;
@@ -71,6 +72,14 @@ public class Produto {
 
 	public void setCategorias(Categoria categorias) {
 		this.categorias = categorias;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
     

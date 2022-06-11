@@ -35,8 +35,8 @@ public class Cliente {
     private String email;
     
     
-    @OneToOne (mappedBy ="cliente")
-    private Endereco enderecos;
+    @OneToMany (mappedBy ="cliente")
+    private List<Endereco> enderecos;
     
   
     @OneToMany (mappedBy ="cliente")
@@ -85,11 +85,13 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public Endereco getEnderecos() {
+
+
+	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}
 
-	public void setEnderecos(Endereco enderecos) {
+	public void setEnderecos(List<Endereco> enderecos) {
 		this.enderecos = enderecos;
 	}
 
